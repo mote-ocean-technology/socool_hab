@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Integrated Ocean Observing System Registry of In-situ Observations - 2006) -->
+<!-- NOAA Coastal Services Center and Central and Northern California Ocean Observing System -->
+<gml:FeatureCollection xmlns:gml="http://www.opengis.net/gml" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.csc.noaa.gov/ioos/schema obsRegistry.xsd" xmlns:ioos="http://www.csc.noaa.gov/ioos">
+    <gml:boundedBy>
+        <gml:Envelope srsName="EPSG:4326" srsDimension="2">
+        <gml:lowerCorner>26.13 -82.78410</gml:lowerCorner>
+        <gml:upperCorner>27.46610 -81.81</gml:upperCorner>
+        </gml:Envelope>
+    </gml:boundedBy>
+
+        <gml:featureMember>
+            <ioos:InsituPointObs gml:id="MOTE.SIMINDEX.1">
+            <ioos:version>1.0</ioos:version>
+            <ioos:modified>2014-10-17T10:10:22Z</ioos:modified>
+            <ioos:observationName>Phytoplankton</ioos:observationName>
+            <ioos:status>Operating</ioos:status>
+            <ioos:platformName>DOCK</ioos:platformName>
+	    <ioos:platformType></ioos:platformType>
+	    <ioos:coverageFootprint></ioos:coverageFootprint>
+	    <ioos:metadataURI></ioos:metadataURI>
+	    <ioos:sponsor>Non-Federal</ioos:sponsor>
+            <ioos:horizontalPosition>
+            <gml:Point>
+            <gml:pos>27.3338 -82.5791</gml:pos>
+            </gml:Point>
+            </ioos:horizontalPosition>
+            <ioos:verticalPosition uom="units.xml#meter">-1</ioos:verticalPosition>
+            <ioos:verticalDatum>MSL</ioos:verticalDatum>
+            <ioos:operator>Mote Marine Laboratory</ioos:operator>
+            <ioos:organization>GCOOS</ioos:organization>
+            <ioos:startDate></ioos:startDate>
+            <ioos:endDate></ioos:endDate>
+            <ioos:operatorURI>http://www.mote.org</ioos:operatorURI>
+            <ioos:platformURI>http://coolcloud.mote.org</ioos:platformURI>
+            <ioos:dataURI>http://coolcloud.mote.org:8080/fixed</ioos:dataURI>
+            <ioos:comments></ioos:comments>
+            </ioos:InsituPointObs>
+        </gml:featureMember>
+
+        <gml:featureMember>
+            <ioos:InsituPointObs gml:id="MOTE.SIMINDEX.2">
+            <ioos:version>1.0</ioos:version>
+            <ioos:modified>2014-10-17T10:10:22Z</ioos:modified>
+            <ioos:observationName>Phytoplankton</ioos:observationName>
+            <ioos:status>Operating</ioos:status>
+            <ioos:platformName>SANIBEL</ioos:platformName>
+	    <ioos:platformType></ioos:platformType>
+	    <ioos:coverageFootprint></ioos:coverageFootprint>
+	    <ioos:metadataURI></ioos:metadataURI>
+	    <ioos:sponsor>Non-Federal</ioos:sponsor>
+            <ioos:horizontalPosition>
+            <gml:Point>
+            <gml:pos>26.4788 -82.0630</gml:pos>
+            </gml:Point>
+            </ioos:horizontalPosition>
+            <ioos:verticalPosition uom="units.xml#meter">-1</ioos:verticalPosition>
+            <ioos:verticalDatum>MSL</ioos:verticalDatum>
+            <ioos:operator>Mote Marine Laboratory</ioos:operator>
+            <ioos:organization>GCOOS</ioos:organization>
+            <ioos:startDate></ioos:startDate>
+            <ioos:endDate></ioos:endDate>
+            <ioos:operatorURI>http://www.mote.org</ioos:operatorURI>
+            <ioos:platformURI>http://coolcloud.mote.org</ioos:platformURI>
+            <ioos:dataURI>http://coolcloud.mote.org:8080/fixed</ioos:dataURI>
+            <ioos:comments></ioos:comments>
+            </ioos:InsituPointObs>
+        </gml:featureMember>
+</gml:FeatureCollection>

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+  <div id='appsWrapper' class='appsWrapper'>
+    <div id='contentTitle' class='contentTitle'>AUV Operations</div>
+    <script>
+    $(".appsWrapper").css("display", "block");
+    </script>
+    <script>
+    //enforce minimum height
+    var height = $(".appsWrapper").height();
+    if (height < 700) {
+      $(".appsWrapper").height(700);
+    }
+    </script>
+    {% for op  in ops %}
+    <div class='appIcon'>
+      <a href="{{ op.url }} ">
+      <div class="appIconImage"><img src="{{ request.script_root }}/static/images/{{ op.image }}"</></div>
+      <div class="appIconCaption">{{ op.caption }}</div>
+    </div></a>
+    {% endfor %}
+  </div>
+{% endblock %}

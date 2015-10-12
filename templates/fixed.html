@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+{% block content %}
+{% autoescape false %}
+ <! Div for all app displays. Set as 'display: none' by default.->
+      <div id='appsWrapper' class='appsWrapper'>
+      <script>
+        $(".appsWrapper").css("display", "block");
+      </script>
+  <div class='contentTitle'>Fixed/Buoy Observations</div>
+  <div class='dashboard'>
+    <table>
+      <th>Operator</th>
+      <th>Site</th>
+      <th>Serial</th>
+      <th>Deployed</th>
+      <th>Days Wet</th>
+      <th>Voltage</th>
+      <th>SimIndex</th>
+      <th>Bypass</th>
+      <th>S</th>
+      <th>a(440)</th>
+      <th>CDOM Ref</th>
+      <th>Last Report</th>
+    {% for site in active_sites %}
+    <tr class='tr_dash'>
+      <td class='td_dash'>{{ site.operator }}</td>
+      <td class='td_dash'>{{ site.site }}</td>
+      <td class='td_dash'>{{ site.serial }}</td>
+      <td class='td_dash'>{{ site.deployed }}</td>
+      <td class='td_dash'>{{ site.days_wet }}</td>
+      <! Manual for now, must make this automatic ->
+            {% if site.voltage > 10.9 %}
+              <td class='td_good' onclick="getGraphData('{{ site.site }}', '{{ site.serial }}', 'voltage', 'Voltage')">{{ site.voltage }}</td>
+            {% endif %}
+            {% if site.voltage < 10.9 %}
+              <td class='td_warn'  onclick="getGraphData('{{ site.site }}', '{{ site.serial }}', 'voltage', 'voltage')"></td>
+            {% endif %}
+            {% if site.voltage < 10.2 %}
+              <td class='td_crit'   onclick="getGraphData('{{ site.site }}', '{{ site.serial }}', 'voltage', 'voltage')"></td>
+            {% endif %}
+            <! Similarity Index ->
+            {% if site.similarity_index <= 0.59  %}
+              <td class='td_good' onclick="getGraphData('{{ site.site }}', '{{ site.serial }}', 'similarity_index', 'Sim Index')">{{ site.similarity_index }}</td>
+            {% endif %}
+            {% if (site.similarity_index > 0.59 and site.similarity_index < 0.79) %}
+              <td class='td_warn'  onclick="getGraphData('{{ site.site }}', '{{ site.serial }}', 'similarity_index', 'Sim Index')">{{ site.similarity_index }}</td>
+            {% endif %}
+            {% if site.similarity_index >= 0.79 %}
+              <td class='td_crit'  onclick="getGraphData('{{ site.site }}', '{{ site.serial }}', 'similarity_index', 'Sim Index')">{{ site.similarity_index }}</td>
+            {% endif %}
+
+            <! Bypass Pressure ->
+            {% if site.pressure_drop < 8.0 %}
+              <td class='td_good'  onclick="getGraphData('{{ site.site }}', '{{ site.serial }}', 'pressure_drop', 'Bypass Pressure')">{{ site.pressure_drop}}</td>
+            {% endif %}
+            {% if (site.pressure_drop > 8.0 and site.pressure_drop < 15.9) %}
+              <td class='td_warn'  onclick="getGraphData('{{ site.site }}', '{{ site.serial }}', 'pressure_drop', 'Bypass Pressure')">{{ site.pressure_drop}}</td>
+            {% endif %}
+            {% if site.pressure_drop >= 15.9 %}
+              <td class='td_crit'  onclick="getGraphData('{{ site.site }}', '{{ site.serial }}', 'pressure_drop','Bypass Pressure')">{{ site.pressure_drop}}</td>
+            {% endif %}
+
+            <! CDOM Slope ->
+            {% if site.cdom_slope <= 0.01 %}
+              <td class='td_good'  onclick="getGraphData('{{ site.site }}', '{{ site.serial }}', 'cdom_slope', 'Slope')">{{ site.cdom_slope }}</td>
+            {% endif %}
+            {% if site.cdom_slope > 0.01 %}
+              <td class='td_alert'  onclick="getGraphData('{{ site.site }}', '{{ site.serial }}', 'cdom_slope', 'Slope')">{{ site.cdom_slope }}</td>
+            {% endif %}
+
+            <! a(440) ->
+            {% if site.intercept <= 0.2 %}
+              <td class='td_warn' onclick="getGraphData('{{ site.site }}', '{{ site.serial }}', 'intercept', 'a(440)')">{{ site.intercept }}</td>
+            {% elif  site.intercept >= 2.0 %}
+              <td class='td_warn' onclick="getGraphData('{{ site.site }}', '{{ site.serial }}', 'intercept', 'a(440)')">{{ site.intercept }}</td>
+            {% else %}
+              <td class='td_good' onclick="getGraphData('{{ site.site }}', '{{ site.serial }}', 'intercept', 'a(440')">{{ site.intercept }}</td>
+            {% endif %}
+
+             <! CDROM Ref remaining ->
+            {% if site.water_vol > 150 %}
+                <td class='td_good'>{{ site.water_vol }}</td>
+            {% elif (site.water_vol < 150 and site.water_vol > 50) %}
+                <td class='td_alert'>{{ site.water_vol }}</td>
+            {% else %}
+                <td class='td_warn'>{{ site.water_vol }}</td>
+            {% endif %}
+
+            <! Date math for last report ->
+            {% if site.time_delta < 14400 %}
+              <td class='td_good_date'>{{ site.date }}</td>
+            {% endif %}
+            {% if (site.time_delta > 14400 and site.time_delta < 28800) %}
+              <td class='td_alert_date'>{{ site.date }}</td>
+            {% endif %}
+            {% if (site.time_delta > 28800 and site.time_delta < 43200) %}
+              <td class='td_warn_date'>{{ site.date }}</td>
+            {% endif %}
+            {% if site.time_delta > 43200 %}
+              <td class='td_crit_date'>{{ site.date }}</td>
+            {% endif %}
+    </tr>
+    {% endfor %}
+    </table>
+  </div>
+</div>
+  <div id='obs-map' class='obsMap'>
+    <script>
+      showObsMap({{ inactive_sites }} , {{ active_sites }});
+      $(".obsMap").css("display", "block");
+    </script>
+  </div>
+{% endautoescape %}
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+  <div id='appsWrapper' class='appsWrapper'>
+  <div id='contentTitle' class='contentTitle'>Technology</div>
+  <script>
+    $(".appsWrapper").css("display", "block");
+  </script>
+  {% for tech  in tech %}
+    <div class='appIcon'>
+      <a href=" {{ tech.url }} ">
+      <div class="appIconImage"><img src="{{ request.script_root }}/static/images/{{ tech.image }}"</></div>
+      <div class="appIconCaption">{{ tech.caption }}</div>
+    </div></a>
+  {% endfor %}
+  <script>
+    //enforce minimum height
+    var height = $(".appsWrapper").height();
+    if (height < 700) {
+      $(".appsWrapper").height(700);
+    }
+  </script>
+  </div>
+{% endblock %}

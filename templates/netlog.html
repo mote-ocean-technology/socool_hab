@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<div class='appsWrapper'>
+  <div class='contentTitle'>NetLog Last 7 Days</div>
+  <script>
+    $(".appsWrapper").css("display", "block");
+  </script>
+  <div class='dashboard'>
+    <table>
+    {% for logline in net_log %}
+      <tr class='tr_dash'>
+        <td class='td_netLogDate'>{{ logline.DATETIME }}</td>
+        <td class='td_netLogLine'>{{ logline.logline }}</td>
+      </tr>
+     {% endfor %}
+     </table>
+  </div>
+</div>
+<script>
+//enforce minimum height
+  var height = $(".appsWrapper").height();
+  if (height < 700) {
+    $(".appsWrapper").height(700);
+  }
+</script>
+{% endblock %}

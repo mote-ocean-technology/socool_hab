@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class='appsWrapper'>
+  <div class='buttonBar'>
+    <a class="buttonSmall" href="{{request.url_root}}products/1">Last 24 Hours</a>
+    <a class="buttonSmall" href="{{request.url_root}}products/7">7 Days</a>
+    <a class="buttonSmall" href="{{request.url_root}}products/30">30 Days</a>
+    <a class="buttonSmall" href="{{request.url_root}}products/60">60 Days</a>
+    <a class="buttonSmall" href="{{request.url_root}}products/90">90 Days</a>
+    <a class="buttonSmall" href="{{request.url_root}}products/365">1 Year</a>
+    <a class="buttonSmall" href="{{request.url_root}}products/0">All Data</a>
+  </div>
+  <script>
+    $(".appsWrapper").css("display", "block");
+  </script>
+  <div class='dashboard'>
+    <table>
+      <th>Site</th>
+      <th>Serial</th>
+      <th>Voltage</th>
+      <th>SimIndex</th>
+      <th>Bypass</th>
+      <th>CDOM Ref(ml)</th>
+      <th>Error Code</th>
+      <th>S</th>
+      <th>a(440)</th>
+      <th>Int Time</th>
+      <th>Last Report</th>
+      {% for site in active_sites %}
+        <tr class='tr_dash'>
+          <td class='td_dash'>{{ site.site }}</td>
+          <td class='td_dash'>{{ site.serial }}</td>
+          <td class='td_dash'>{{ site.voltage }}</td>
+          <td class='td_dash'>{{ site.similarity_index }}</td>
+          <td class='td_dash'>{{ site.pressure_drop }}</td>
+          <td class='td_dash'>{{ site.water_vol }}</td>
+          <td class='td_dash'>{{ site.error_code }}</td>
+          <td class='td_dash'>{{ site.cdom_slope }}</td>
+          <td class='td_dash'>{{ site.intercept }}</td>
+          <td class='td_dash'>{{ site.integration_time }}</td>
+          <td class='td_dash'>{{ site.date }}</td>
+        </tr>
+      {% endfor %}
+    </table>
+  </div>
+  </div>
+  <script>
+  //enforce minimum height
+    var height = $(".appsWrapper").height();
+    if (height < 700) {
+      $(".appsWrapper").height(700);
+    }
+  </script>
+{% endblock %}

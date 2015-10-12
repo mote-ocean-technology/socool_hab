@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <title>SO COOL HAB Observatory</title>
+  <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="{{ request.script_root }}/static/javascript/socool_flask.js"></script>
+    <script src="//maps.googleapis.com/maps/api/js?v=3&key=AIzaSyC7kVB8f5olK3EHnL7950hhFVRFuWJHSM4&sensor=true" type="text/javascript"></script>
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+    <script src="http://code.highcharts.com/modules/exporting.js"></script>
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-40276702-1', 'mote.org');
+    ga('send', 'pageview');
+    </script>
+
+    <style>
+      @import url({{ request.script_root }}/static/css/socool_v3_flask.css);
+      @import url("http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css");
+    </style>
+  </head>
+
+  <body>
+    <script type=text/javascript>
+      $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+    </script>
+    <div class='pageWrapper'>
+      <header>
+      </header>
+      <nav>
+      {% block nav %}
+      {% for link in nav_links %}
+          <li><a href="{{ request.script_root }}{{ link.url }}">{{ link.title }}</a></li>
+      {% endfor %}
+      {% endblock %}
+      <div class='socialIcon'><a href="https://www.facebook.com/FLHABs?fref=photo"><img src='{{ request.script_root }}/static/images/facebook_icon.jpg'></img></a></div>
+      </nav>
+         {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul>
+        {% for message in messages %}
+            <li>{{ message }} </li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+
+      {% block content %}
+      {% endblock %}
+
+      <footer>
+        <div class='footerTitle'>&copy 2014 Mote Marine Laboratory</div>
+      </footer>
+    </div>
+  </body>
+</html>

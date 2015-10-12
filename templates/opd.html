@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+  <div id='appsWrapper' class='appsWrapper'>
+  <script>
+    $(".appsWrapper").css("display", "block");
+  </script>
+  <div class='contentTitle'>Deploy/Remove OPD</div>
+  <div class='dashboard'>
+    <table class="deployOpdTable">
+      <th>Site</th>
+      <th>Operator</th>
+      <th>Serial</th>
+      <th>Deployed</th>
+
+    {% for site in sites %}
+        <tr>
+            <td class='td_dash'>{{ site.site }}</td>
+            <td class='td_dash'>{{ site.operator }}</td>
+            <td class='td_dash'>{{ site.serial }}</td>
+            <td class='td_dash'>{{ site.deployed }}</td>
+            <td class='td_glyph'>
+                <a href="{{ request.script_root }}/login/opd/deploy/{{ site.site }}"
+                <span class="fa fa-pencil fa-2x greenIconColor"></span></a>
+            </td>
+        </tr>
+    {% endfor %}
+
+    </table>
+    <!Need submit/reset buttons in div called button_bar ->
+  </div>
+  <script>
+  //enforce minimum height
+    var height = $(".appsWrapper").height();
+     if (height < 700) {
+      $(".appsWrapper").height(700);
+     }
+  </script>
+{% endblock %}

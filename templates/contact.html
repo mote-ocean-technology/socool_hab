@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<div class='iconDock'>
+  {% for home_app in home_apps %}
+    <div class='homePageIcon'>
+    <div class='homePageIconCaption'>{{ home_app.title }}</div>
+    <a href="{{ request.script_root }}{{home_app.url }}"><img class='homePageIconImage' src='{{ request.script_root }}/static/images/{{ home_app.image }}'></img></a>
+    </div>
+  {% endfor %}
+
+  <div class='partners'>
+  <div class='partnersTitle'>Partners</div>
+  {% autoescape false %}
+  {% for partner in partners %}
+    <div class='partnerIcon'>
+      <a href="{{ partner.url }}"><img class='partnerImage' src="{{ request.script_root }}/static/images/{{ partner.image }}"></img></a>
+    </div>
+  {% endfor %}
+  {% endautoescape %}
+  </div>
+</div>
+{% endblock %}
+

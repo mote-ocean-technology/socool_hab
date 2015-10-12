@@ -1,0 +1,674 @@
+/* reset browser styles */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+    line-height: 1.2;
+    background-color: rgb(234,234,234);
+}
+ol {
+	padding-left: 1.4em;
+	list-style: decimal;
+}
+ul {
+	padding-left: 1.4em;
+	list-style: square;
+}
+
+/* end reset browser styles */
+
+.banner {
+  margin: 0;
+  font-size: 1.4em;
+  color: #fff;
+  text-align: center;
+}
+
+p {
+  margin-top: 20px;
+}
+
+.dashboardTable {
+  background-color: white;
+  width: 100%;
+  height: 100%;
+
+}
+
+table {
+  background-color: white;
+  text-align: left; padding: 0px;
+  margin-bottom: 0px;
+  width: 100%;
+}
+
+tr {
+    background-color: pink;
+}
+
+th {
+  text-align: center;
+  color: #ffffff;
+  padding: 10px;
+  margin-top:5px;
+  margin-bottom:5px;
+  background-color: #3399ff;
+  font-size: 11pt;
+}
+
+td {
+  font-size: 10pt;
+}
+
+.techpubs_th {
+  width: 60%;
+  text-align: center;
+  color: #ffffff;
+  padding: 10px;
+  margin-top:5px;
+  margin-bottom:5px;
+  background-color: #3399ff;
+  font-family:"Arial", Helvetica, sans-serif;
+  font-size: 12pt;
+}
+
+.techpubs_tr {
+  text-align: left;
+  font-family:"Arial", Helvetica, sans-serif;
+  font-size: 10pt;
+}
+
+.inst_docs_th {
+  width: 60%;
+  text-align: center;
+  color: #ffffff;
+  padding: 10px;
+  margin-top:5px;
+  margin-bottom:5px;
+  background-color: #3399ff;
+}
+
+
+table.inst_docs th { font-family:"Arial", Helvetica, sans-serif; font-size: 13pt;}
+table.inst_docs th { width: 40%;}
+table.inst_docs td { text-align: left;}
+table.inst_docs td { font-family:"Arial", Helvetica, sans-serif; font-size: 1.0em;}
+table.inst_docs td { padding-left: 5px;}
+
+table.glider_docs th { font-family:"Arial", Helvetica, sans-serif; font-size: 13pt;}
+table.glider_docs th { width: 85%;}
+table.glider_docs td { text-align: left;}
+table.glider_docs td { font-family:"Arial", Helvetica, sans-serif; font-size: 1.0em;}
+table.glider_docs td { padding-left: 5px;}
+
+table.sop_docs th { font-family:"Arial", Helvetica, sans-serif; font-size: 13pt;}
+table.sop_docs th { width: 85%;}
+table.sop_docs td { text-align: left;}
+table.sop_docs td { font-family:"Arial", Helvetica, sans-serif; font-size: 1.0em;}
+table.sop_docs td { padding-left: 5px;}
+
+
+
+.pubs_th {
+  width: 45%;
+  text-align: center;
+  color: #ffffff;
+  padding: 10px;
+  margin-top:5px;
+  margin-bottom:5px;
+  background-color: #3399ff;
+}
+
+.presentations_th {
+  width: 37%;
+  text-align: center;
+  color: #ffffff;
+  padding: 10px;
+  margin-top:5px;
+  margin-bottom:5px;
+  background-color: #3399ff;
+}
+
+.presentations_event_td {
+  text-align: center;
+  color: black;
+  padding: 10px;
+  margin-top:5px;
+  margin-bottom:5px;
+}
+
+
+td {
+  color: #000000;
+  padding: 2px;
+  background-color: white;
+}
+
+.clear:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+
+.clear {
+	zoom: 1;
+}
+
+body {
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+
+header {
+  width: 100%;
+  height: 100px;
+  background-image:url("http://coolcloud.mote.org/socool_hab/static/images/socool_header.jpg");
+}
+
+nav {
+  width: 100%;
+	background-color: rgb(0,0,0);
+  float: left;
+  margin-top: 1px;
+  margin-bottom: 1px;
+  height: 40px;
+}
+
+
+nav li {
+  font-family:"Arial", Helvetica, sans-serif;
+  font-size: 14pt;
+	float: left;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+nav a {
+	float: left;
+	font-size: .8em;
+	color: white;
+	font-weight: normal;
+	text-decoration: none;
+  padding: 10px;
+}
+
+nav a:hover {
+	background-color: rgb(115,109,179);
+}
+
+.main h2 {
+	font-size: 2em;
+	margin-top: 10px;
+}
+.main h3 {
+	font-size: 1.5em;
+	margin-top: 20px;
+}
+.main p {
+	margin-bottom: 15px;
+}
+footer {
+  width: 958px;
+	font-size: .8em;
+	background-color: rgb(8,2,50);
+	color: white;
+  text-align: center;
+  clear: both;
+}
+footer a {
+	color: white;
+}
+/* add tutorial styles below here */
+* {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/* uncomment this style if you want the entire page -- including background colors --
+   constrained inside a 1200 pixel, centered box */
+
+.socialIcon a {
+    position: right;
+    float: right;
+    margin-right: 3px;
+    width: 40px;
+    height: 40px;
+    background-color: black;
+    overflow: hidden;
+    padding: 0px;
+}
+
+.pageWrapper {
+  margin-top: 5px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 960px;
+  height: 100%;
+  border-radius: 15px;
+  box-shadow: 10px 10px 5px #888888;
+  overflow: hidden;
+  border: 1px solid black;
+}
+
+.textWrapper {
+  font-family:"Arial", Helvetica, sans-serif;
+  font-size: 14pt;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  height: 100%;
+  display: block;
+}
+
+
+.ioosBox {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 30px;
+}
+
+.iconDock {
+  float: left;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(253,245,230);
+  display: block
+}
+
+.homePageIcon {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10%;
+  float: left;
+  width: 350px;
+  height: 300px;
+  background-color: white;
+  display: block;
+  border: 1px solid black;
+  box-shadow: 5px 5px 5px #888888;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+
+.staffMember {
+  float: left;
+  width: 175px;
+  height: 175px;
+  background-color: white;
+  display: block;
+  border: 1px solid black;
+  margin: 20px;
+  box-shadow: 5px 5px 5px #888888;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.appIcon {
+  float: left;
+  width: 175px;
+  height: 175px;
+  background-color: white;
+  display: block;
+  border: 1px solid black;
+  margin: 20px;
+  box-shadow: 5px 5px 5px #888888;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+
+.transition{
+  -webkit-transition: all .2s linear;
+  -o-transition: all .2s linear;
+  -moz-transition: all .2s linear;
+  transition: all .2s linear;
+}
+
+.staffMember:hover{
+  box-shadow:0px 0px 25px 0px black;
+}
+
+.iconDock:hover{
+  box-shadow:0px 0px 25px 0px black;
+}
+
+.appIcon:hover{
+  box-shadow:0px 0px 25px 0px black;
+}
+
+.homePageIcon:hover{
+  box-shadow:0px 0px 25px 0px black;
+}
+
+.partnerIcon:hover{
+  box-shadow:0px 0px 10px 0px black;
+}
+.mugShot {
+  width: 100%;
+  height: 85%;
+  overflow: hidden;
+}
+
+.appIconImage{
+  width: 100%;
+  height: 85%;
+  overflow: hidden
+}
+
+.partnerImage {
+  width: 100%;
+}
+
+.mugCaption {
+  font-family:"Arial", Helvetica, sans-serif;
+  font-size: 14pt;
+  text-align: center;
+  width: 100%;
+  height: 15%;
+  background-color: rgb(252,230,201 );
+  display: block;
+  color: black;
+  padding-top: 5px;
+  overflow: hidden;
+
+}
+
+.appIconCaption {
+  font-family:"Arial", Helvetica, sans-serif;
+  font-size: 14pt;
+  text-align: center;
+  width: 100%;
+  height: 15%;
+  background-color:  rgb(252,230,201 );;
+  display: block;
+  color: black;
+  padding-top: 2px;
+  overflow: hidden;
+}
+
+.homePageIconCaption {
+  font-family:"Arial", Helvetica, sans-serif;
+  font-size: 14pt;
+  text-align: center;
+  width: 100%;
+  height: 10%;
+  background-color: rgb(0,0,139);
+  display: block;
+  color: white;
+  padding-top: 5px;
+  overflow: hidden;
+}
+
+.homePageIconImage {
+  width: 100%;
+  overflow: hidden;
+}
+.buttonSmall {
+  padding: 2px;
+  border: 1px solid black;
+  text-align:center;
+  font-size: 10px;
+  width: 100px;
+  height: 100%;
+  background-color: white;
+  text: blue;
+  style: italic;
+  border-radius: 5px;
+}
+
+.buttonBar {
+  text-align: center;
+  float: left;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 25px;
+  background-color: gray;;
+  display: block;
+}
+.contentWrapper {
+  float: left;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(253,245,230);
+  display: block;
+}
+
+.formWrapper {
+  float: left;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(253,245,230);
+  display: block;
+  padding-left: 10px;
+}
+
+.appsWrapper {
+  float: left;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(253,245,230);
+  display: none;
+  overflow: hidden;
+}
+
+.mugWrapper {
+  float: left;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(253,245,230);
+  display: none;
+}
+
+.pubsWrapper {
+  float: left;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  display: none;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.chartWrapper {
+  float: left;
+  width: 100%;
+  height: 600px;
+  background-color: #ffffff;
+  display: none;
+}
+
+
+.btn-close {
+  position:relative;
+  width: 25px;
+  height: 25px;
+  background-image: url('/static/images/close-button.png');
+  overflow: none;
+}
+
+.dashboard {
+  width: 100%;
+  margin-top: 0px;
+  height: 100%;
+  background-color: white;
+  display: block;
+  overflow: hidden;
+  box-shadow: 5px 5px 5px #888888;
+  border-radius: 5px;
+}
+
+.obsMap {
+  float: left;
+  width: 100%;
+  margin-top: 1px;
+  height: 600px;
+  background-color: white;
+}
+.auvMap {
+  float: left;
+  width: 100%;
+  margin-top: 1px;
+  height: 600px;
+  background-color: white;
+  display: none;
+}
+
+.iconBlock {
+  text-align: center;
+  float: left;
+  width: 48%;
+  height: 300px;
+  margin-bottom: 1px;
+  margin-right: 1px;
+  background-color: white;
+}
+
+.partners {
+  margin-bottom: 1px;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(224,224,224);
+  float: left;
+}
+
+.partnerIcon {
+  margin-left: 5%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  text-align: center;
+  float: left;
+  width: 75px;
+  height:75px;
+  background-color: white;
+  box-shadow: 5px 5px 5px #888888;
+  border-radius: 5px;
+  overflow: hidden;
+  border: 1px solid black;
+}
+
+.partnersTitle {
+  background-color: rgb(0,0,100);
+  color: white;
+  width:  100%;
+  height: 20px;
+  text-align: center;
+  font-family:"Arial", Helvetica, sans-serif;
+  font-size: 11pt;
+  font-style: italic
+}
+
+.contentTitle {
+  width:  100%;
+  text-align: center;
+  height: 25px;
+  background-color: rgb(0,0,100);
+  color: white;
+  font-size: 1.2em;
+}
+
+.iconTitle {
+    width: 429px;
+    height: 25px;
+    background-color: rgb(0,0,100);
+    color: white;
+    font-size: 1.20em;
+}
+
+.footerTitle {
+    width: 958px;
+    height: 25px;
+    background-color: rgb(0,0,100);
+    color: white;
+    font-size: 1.20em;
+}
+
+
+.infoBox {
+    border: 0px solid red;
+    background-color: white;
+    color: white;
+    width: 350px;
+    height: 100%;
+}
+
+.infoBoxTitle {
+  text-align: center;
+  font-size: 1.5em;
+  color: black;
+  font-style: bold;
+  background-color: white;
+}
+
+#info-window {
+border: 2px solid red;
+width: 100%;
+height: 503px;
+background-color: white;
+font: 1.0em;
+}
+
+.infoBoxTable {
+  border: 1px solid white;
+  margin: 0 auto;
+  font-size: 12px;
+  font-style: bold;
+  width: 100%;
+  height: 95%;
+  background-color: white;
+}
+.td_infoBoxSensor {
+  border: 0px solid red;
+  background-color: white;
+  color: black;
+  font-size: 12px;
+  width: 50%;
+  text-align: left;
+}
+.td_infoBoxData {
+  border: 0px solid green;
+  background-color: white;
+  color: black;
+  font-size: 12px;
+  width: 50%;
+  text-align: left;
+}
+.td_netLogDate {
+  border: 0px solid black;
+  font-size .8em;
+  width: 20%;
+  text-align: left;
+}
+
+.td_netLogLine {
+  border: 0px solid black;
+  font-size .8em;
+  width: 80%;
+  text-align: left;
+}
+
+
+.td_good_date {background-color: #66FF33; color: black; border: 1px solid black;}
+.td_alert_date {background-color: #FFFF00; color: black; border: 1px solid black;}
+.td_warn_date {background-color: #FFA500; color: black; border: 1px solid black;}
+.td_crit_date {background-color: #FF0000; color: black; border: 1px solid black;}
+.td_dash {background-color: rgb(253,245,230); border: 1px solid black;}
+.td_glyph {background-color: white; border: 0px; text-align: center;}
+.td_good {cursor: pointer; background-color: #66FF33; color: black; border: 2px solid blue;}
+.td_alert {cursor: pointer; background-color: #FFFF00; color: black; border: 2px solid blue;}
+.td_warn {cursor: pointer; background-color: #FFA500; color: black; border: 2px solid blue;}
+.td_crit {cursor: pointer; background-color: #FF0000; color: black; border: 2px solid blue;}
+
+.greenIconColor {color:green;}

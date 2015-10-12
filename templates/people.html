@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+  <div id='mugWrapper' class='mugWrapper'>
+  <div id='contentTitle' class='contentTitle'>People</div>
+  <script>
+    $(".mugWrapper").css("display", "block");
+  </script>
+  {% for person in staff %}
+    <div class='staffMember'>
+      <a href=" {{ person.url }} ">
+      <div class="mugShot"><img src="{{ request.script_root }}/static/images/{{ person.image }}"</></div>
+        <div class="mugCaption">{{ person.first }} {{ person.last }}</div>
+    </div></a>
+    {% endfor %}
+    <script>
+    //enforce minimum height
+      var height = $(".mugWrapper").height();
+      if (height < 700) {
+        $(".mugWrapper").height(700);
+      }
+    </script>
+  </div>
+{% endblock %}

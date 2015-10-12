@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+  <div id='pubsWrapper' class='pubsWrapper'>
+  <div id='contentTitle' class='contentTitle'>Glider Documentation</div>
+  <script>
+    $(".pubsWrapper").css("display", "block");
+  </script>
+  <div class="table">
+    <table class='glider_docs'>
+    <th>Title</th><th>Revision Date</th>
+    {% for doc in glider_docs %}
+    <tr>
+      <td><a href="{{ request.script_root }}/static/{{ doc.url }}">{{ doc.title }}</a></td><td>{{ doc.revdate }}</td></a>
+    </tr>
+    {% endfor %}
+    </table>
+    </div>
+  <script>
+  //enforce minimum height
+    var height = $(".pubsWrapper").height();
+    if (height < 700) {
+      $(".pubsWrapper").height(700);
+    }
+  </script>
+  </div>
+{% endblock %}

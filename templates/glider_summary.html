@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="appsWrapper">
+  <script>
+    $(".appsWrapper").css("display", "block");
+  </script>
+  <div class='contentTitle'>Glider Deployment Summaries</div>
+  <div class="table">
+    <table>
+    {% for header in headers %}
+      <th>{{ header }} </th>
+    {% endfor %}
+    {% for item in data %}
+      <tr>
+        {% for element in item %}
+          <td>  {{ element|safe }} </td>
+        {% endfor %}
+      </tr>
+    {% endfor %}
+    </table>
+  </div>
+  </div>
+  <script>
+    //enforce minimum height
+    var height = $(".contentWrapper").height();
+    if (height < 700) {
+      $(".contentWrapper").height(700);
+    }
+  </script>
+{% endblock %}

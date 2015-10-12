@@ -1,0 +1,14 @@
+Mote Marine Laboratory
+Optical Phytoplankton Discriminator
+Setup & Control Program
+
+
+1. Unzip OPD Setup&Control to a local folder.
+
+2. Run setup.exe
+
+3. Run regscom.bat
+Default location 
+c:\Program Files\Phytoplankton Ecology\OPD SetupControl
+
+4 Launch OPDSetupControl.exe

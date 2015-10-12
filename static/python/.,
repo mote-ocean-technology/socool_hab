@@ -1,0 +1,21 @@
+import MySQLdb
+import sys
+
+def connect_db_socool():
+    """
+    @author: rdc
+    Inputs: none
+    Outputs: Mysql cursor
+    """
+    dbHost = "localhost"
+    dbUser = "socool"
+    dbPass = "s0c00l2014!"
+    dbDB = "socool"
+    try:
+        db = MySQLdb.connect(host=dbHost, user=dbUser, passwd=dbPass, db=dbDB)
+    except MySQLdb.Error as e:
+        print "MySQLdb error: %s" % e
+        sys.exit()
+
+    return db
+

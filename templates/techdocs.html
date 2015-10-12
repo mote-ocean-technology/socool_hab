@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+  <div id='pubsWrapper' class='pubsWrapper'>
+  <div class='contentTitle'>Publications</div>
+  <script>
+    $(".pubsWrapper").css("display", "block");
+  </script>
+  <div class="table">
+  <table>
+    <th class="techpubs_th">Title</th><th class="techpubs_th">Authors</th><th>Revision Date</th>
+    {% for doc in tech_docs %}
+      <tr class="techpubs_tr">
+        <td><a href="{{ request.script_root }}/static/{{ doc.url }}">{{ doc.title }}</a></td><td>{{ doc.authors }}</td><td>{{ doc.date }}
+        </td></a>
+       </tr>
+    {% endfor %}
+  </table>
+  </div>
+  <script>
+    //enforce minimum height
+    var height = $(".pubsWrapper").height();
+    if (height < 700) {
+      $(".pubsWrapper").height(700);
+    }
+    </script>
+  </div>
+{% endblock %}
+

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+  <div id='formWrapper' class='formWrapper'>
+    <form action="" method="post" name="login">
+      {{ form.hidden_tag() }}
+      <p>
+          <h2>Serial</h2>
+          {{ form.serial(size=80) }}<br>
+          <h2>Operator</h2>
+          {{ form.operator(size=80) }}<br>
+          <h2>Deployed</h2>
+          {{ form.deployed(size=80) }}<br>
+      </p>
+      <p><input type="submit" value="Submit">
+      <input type="reset" value="Reset"></p>
+  </form>
+  </div>
+{% endblock %}

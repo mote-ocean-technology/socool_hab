@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+  <div id='appsWrapper' class='appsWrapper'>
+  <div id='contentTitle' class='contentTitle'>Command And Control Apps</div>
+  <script>
+    $(".appsWrapper").css("display", "block");
+  </script>
+    {% for app in apps %}
+    <div class='appIcon'>
+      <a href="{{ request.script_root }}{{ app.url }} ">
+      <div class="appIconImage"><img src="{{ request.script_root }}/static/images/{{ app.image }}"</></div>
+      <div class="appIconCaption">{{ app.caption }}</div>
+    </div></a>
+    {% endfor %}
+{% endblock %}

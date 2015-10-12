@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content %}
+  <div id='appsWrapper' class='appsWrapper'>
+    <script>
+      $(".appsWrapper").css("display", "block");
+    </script>
+    <div class='contentTitle'>Deployed AUVs</div>
+    <div class='dashboard'>
+      <table>
+        <th>Operator</th>
+        <th>Serial</th>
+        <th>Deployed</th>
+        <th>Days Wet</th>
+        <th>Water Temp</th>
+        <th>Dive/Climb</th>
+        <th>Distance (km)</th>
+        <th>Avg Speed (kt)</th>
+        <th>Last Report (GMT)</th>
+    {% for glider in active_gliders %}
+      <tr class='tr_dash'>
+        <td class='td_dash'>{{ glider.operator }}</td>
+        <td class='td_dash'>{{ glider.serial }}</td>
+        <td class='td_dash'>{{ glider.deployed }}</td>
+        <td class='td_dash'>{{ glider.days_wet }}</td>
+        <td class='td_dash'>{{ glider.sci_water_temp }}</td>
+
+        {% if glider.dc_ratio < 2.0 %}
+          <td class='td_good'>{{ glider.dc_ratio }}</td>
+        {% else %}
+          <td class='td_warn'>{{ glider.dc_ratio }}</td>
+        {% endif %}
+          <td class='td_dash'>{{ glider.horz_dist }}</td>
+          <td class='td_dash'>{{ glider.avg_speed }}</td>
+          <td class='td_good_date'>{{ glider.last_report }}</td>
+        </tr>
+        {% endfor %}
+        </table>
+      </div>
+      <div id='auv-map' class='auvMap'></div>
+      {% autoescape false %}
+        <script>
+          showAuvMap({{ active_gliders }});
+          $(".auvMap").css("display", "block");
+        </script>
+      {% endautoescape %}
+      </div>
+{% endblock %}

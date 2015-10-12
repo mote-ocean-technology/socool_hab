@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="{{ request.script_root }}/static/javascript/socool_flask.js"></script>
+    <script src="//maps.googleapis.com/maps/api/js?v=3&key=AIzaSyC7kVB8f5olK3EHnL7950hhFVRFuWJHSM4&sensor=true" type="text/javascript"></script>
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+    <style>
+      @import url({{ request.script_root }}/static/css/socool_v3_flask.css);
+    </style>
+  </head>
+  <body>
+    <div class='pageWrapper'>
+      <header>
+      </header>
+      <nav>
+        {% block nav %}
+          {% for link in nav_links %}
+          <li><a href="{{ request.script_root }}{{ link.url }}">{{ link.title }}</a></li>
+        {% endfor %}
+        {% endblock %}
+      </nav>
+
+      <! Div for all app displays. Set as 'display: none' by default.->
+       <div id='pubsWrapper' class='pubsWrapper'>
+       <div class='contentTitle'>Standard Operating Procedures</div>
+       <script>
+          $(".pubsWrapper").css("display", "block");
+       </script>
+       <div class="table">
+          <table class='sop_docs'>
+          <th>Title</th><th>Revision Date</th>
+          {% block content %}
+          {% autoescape false %}
+          {% for doc in sop %}
+            <tr>
+              <td><a href="{{ request.script_root }}{{ doc.url }}">{{ doc.title }}</a></td><td>{{ doc.revdate }}</td>
+              </a>
+            </tr>
+          {% endfor %}
+          {% endautoescape %}
+          {% endblock %}
+
+
+          </table>
+       </div>
+
+
+       <script>
+        //enforce minimum height
+        var height = $(".pubsWrapper").height();
+        if (height < 700) {
+          $(".pubsWrapper").height(700);
+        }
+      </script>
+      </div>
+
+      <footer>
+        <div class='footerTitle'>&copy 2014 Mote Marine Laboratory</div>
+      </footer>
+    </div>
+  </body>
+</html>
